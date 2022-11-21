@@ -1,0 +1,17 @@
+@startuml member-service
+
+left to right direction
+actor User as u
+package Member{
+    usecase "User Management" as uc1
+    usecase "Profile Data" as uc2
+    usecase "Role Management" as uc3
+    usecase "Shop Management" as uc4
+}
+
+u --> uc1
+u --> uc2
+u --> uc3
+u --> uc4
+
+@enduml

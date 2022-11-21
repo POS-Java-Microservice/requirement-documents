@@ -1,0 +1,37 @@
+@startuml
+
+skinparam linetye ortho
+
+entity "User" as user{
+    *id : UID <<generated>>
+    *created : DateTime <<generated>>
+    *modified : DateTime <<generated>>
+    --
+    *name : text
+    *phoneNumber : text <<loginId>>
+    *password : text <<encrypted>>
+    *roleGroupId : text <<FK>>
+    *shopId : text <<FK>>
+}
+entity "Shop" as shop{
+    *id : UID <<generated>>
+    *created : DateTime <<generated>>
+    *modified : DateTime <<generated>>
+    --
+    *name : text
+    *latitude : text
+    *longitude : text
+    *fullAddress : text
+}
+entity "Role" as role{
+    *id : UID <<generated>>
+    *created : DateTime <<generated>>
+    *modified : DateTime <<generated>>
+    --
+    *name : text
+}
+
+shop ||--|{ user
+user }|--|{ role
+
+@enduml
