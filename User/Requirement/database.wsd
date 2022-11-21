@@ -10,7 +10,6 @@ entity "User" as user{
     *name : text
     *phoneNumber : text <<loginId>>
     *password : text <<encrypted>>
-    *roleGroupId : text <<FK>>
     *shopId : text <<FK>>
 }
 entity "Shop" as shop{
@@ -23,6 +22,15 @@ entity "Shop" as shop{
     *longitude : text
     *fullAddress : text
 }
+entity "User_Roles" as user_roles{
+    *id : UID <<generated>>
+    *created : DateTime <<generated>>
+    *modified : DateTime <<generated>>
+    --
+    *userId : text <<FK>
+    *roleId : text <<FK>
+}
+
 entity "Role" as role{
     *id : UID <<generated>>
     *created : DateTime <<generated>>
@@ -32,6 +40,7 @@ entity "Role" as role{
 }
 
 shop ||--|{ user
-user }|--|{ role
+user }|--|{ user_roles
+role }|--|{ user_roles
 
 @enduml
