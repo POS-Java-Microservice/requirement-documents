@@ -1,0 +1,27 @@
+@startuml inventory-database
+
+skinparam linetye ortho
+
+entity "Category" as category{
+    *id : UID <<generated>>
+    *created : DateTime <<generated>>
+    *modified : DateTime <<generated>>
+    --
+    *name : text
+    *shopId : string <<FK>>
+}
+entity "Product" as product{
+    *id : UID <<generated>>
+    *created : DateTime <<generated>>
+    *modified : DateTime <<generated>>
+    --
+    *name : text
+    *stock : integer
+    *categoryId : string <<FK>>
+    *price : string
+    *barcodeId : string <<unique>>
+}
+
+category ||--|{ product
+
+@enduml

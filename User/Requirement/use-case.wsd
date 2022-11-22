@@ -2,6 +2,7 @@
 
 left to right direction
 actor Admin as u
+actor User as ur
 package Member{
     usecase "User Management" as uc1
     usecase "Profile Data" as uc2
@@ -13,5 +14,6 @@ u --> uc1
 u --> uc2
 u --> uc3
 u --> uc4
+ur --> uc2
 
 @enduml

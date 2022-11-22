@@ -1,4 +1,4 @@
-@startuml
+@startuml member-database
 
 skinparam linetye ortho
 
@@ -8,9 +8,9 @@ entity "User" as user{
     *modified : DateTime <<generated>>
     --
     *name : text
-    *phoneNumber : text <<loginId>>
-    *password : text <<encrypted>>
-    *shopId : text <<FK>>
+    *phoneNumber : string <<loginId>>
+    *password : string <<encrypted>>
+    *shopId : string <<FK>>
 }
 entity "Shop" as shop{
     *id : UID <<generated>>
@@ -27,8 +27,8 @@ entity "User_Roles" as user_roles{
     *created : DateTime <<generated>>
     *modified : DateTime <<generated>>
     --
-    *userId : text <<FK>
-    *roleId : text <<FK>
+    *userId : string <<FK>
+    *roleId : string <<FK>
 }
 
 entity "Role" as role{
@@ -36,7 +36,7 @@ entity "Role" as role{
     *created : DateTime <<generated>>
     *modified : DateTime <<generated>>
     --
-    *name : text
+    *name : string
 }
 
 shop ||--|{ user
