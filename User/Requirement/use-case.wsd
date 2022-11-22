@@ -1,7 +1,7 @@
 @startuml member-service
 
 left to right direction
-actor User as u
+actor Admin as u
 package Member{
     usecase "User Management" as uc1
     usecase "Profile Data" as uc2

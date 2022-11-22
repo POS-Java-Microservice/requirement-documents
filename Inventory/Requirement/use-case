@@ -1,0 +1,21 @@
+@startuml inventory-service
+
+left to right direction
+actor Cashier as c
+actor Admin as a
+
+package Gateway{
+    usecase "Category Management (Add, Update, Delete)" as uc1
+    usecase "Inventory Management (Add, Update, Delete)" as uc2
+    usecase "Read From Inventory (Barcode)" as uc3
+    usecase "Stock Management (Transaction)" as uc4
+}
+
+a --> uc1
+a --> uc2
+c --> uc3
+c --> uc4
+a --> uc4
+
+
+@enduml

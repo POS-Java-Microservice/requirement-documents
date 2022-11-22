@@ -1,4 +1,4 @@
-@startuml member-service
+@startuml gateway-service
 
 left to right direction
 actor User as u
@@ -6,10 +6,12 @@ package Gateway{
     usecase "Verify Token" as uc1
     usecase "Verify API Url Access" as uc2
     usecase "Refreshing Token" as uc3
+    usecase "Login" as uc4
 }
 
 u --> uc1
 u --> uc2
 u --> uc3
+u --> uc4
 
 @enduml
