@@ -1,0 +1,18 @@
+@startuml transaction-service
+
+left to right direction
+actor Cashier as c
+actor System as s
+
+package Transaction{
+    usecase "Create Product Order" as uc1
+    usecase "Calculate Total Price" as uc2
+    usecase "Transaction History" as uc3
+}
+
+c --> uc1
+uc2 --> s
+c --> uc3
+
+
+@enduml

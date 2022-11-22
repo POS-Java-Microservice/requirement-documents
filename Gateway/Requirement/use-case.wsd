@@ -6,7 +6,7 @@ package Gateway{
     usecase "Verify Token" as uc1
     usecase "Verify API Url Access" as uc2
     usecase "Refreshing Token" as uc3
-    usecase "Login" as uc4
+    usecase "Login and Logout" as uc4
 }
 
 u --> uc1
