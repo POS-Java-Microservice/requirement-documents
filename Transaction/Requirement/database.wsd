@@ -1,0 +1,28 @@
+@startuml transaction-database
+
+skinparam linetye ortho
+
+entity "Item" as item{
+    *id : UID <<generated>>
+    *created : DateTime <<generated>>
+    *modified : DateTime <<generated>>
+    --
+    * name : string
+    * quantity : string
+    * totalPrice : string
+    * transactionId : string <<FK>>
+}
+entity "Transaction" as transaction{
+    *id : UID <<generated>>
+    *created : DateTime <<generated>>
+    *modified : DateTime <<generated>>
+    --
+    *totalPaymentPrice: string
+    *paymentStatus : string <<enum>>
+    *shopId : string <<index>>
+    *userId : string <<index>>
+}
+
+transaction ||--|{ item
+
+@enduml
