@@ -17,7 +17,7 @@ entity "Product" as product{
     --
     *name : text
     *stock : integer
-    *categoryId : string <<FK>>
+    *categoryId : string
     *price : string
     *barcodeId : string <<unique>>
 }

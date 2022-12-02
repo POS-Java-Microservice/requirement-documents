@@ -4,7 +4,7 @@ left to right direction
 actor Cashier as c
 actor Admin as a
 
-package Gateway{
+package Inventory{
     usecase "Category Management (Add, Update, Delete)" as uc1
     usecase "Inventory Management (Add, Update, Delete)" as uc2
     usecase "Read From Inventory (Barcode)" as uc3

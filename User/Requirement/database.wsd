@@ -23,7 +23,6 @@ entity "Shop" as shop{
     *fullAddress : text
 }
 entity "User_Roles" as user_roles{
-    *id : UID <<generated>>
     *created : DateTime <<generated>>
     *modified : DateTime <<generated>>
     --
@@ -37,10 +36,11 @@ entity "Role" as role{
     *modified : DateTime <<generated>>
     --
     *name : string
+    *description : string
 }
 
 shop ||--|{ user
-user }|--|{ user_roles
-role }|--|{ user_roles
+user ||--|{ user_roles
+role ||--|{ user_roles
 
 @enduml
